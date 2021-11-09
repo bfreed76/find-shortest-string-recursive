@@ -1,5 +1,10 @@
 function findShortestStringRecursive(arr) {
-  // type your code here
+ 
+  // return arr.reduce((shortest, current) => 
+  //   current.length < shortest.length ? current : shortest
+  // )
+
+
 }
 
 if (require.main === module) {
@@ -18,7 +23,21 @@ if (require.main === module) {
   console.log("=>", findShortestStringRecursive(['flower', 'juniper', 'lily', 'dandelion']));
 }
 
+const startTime = Date.now();
+
+for (let i = 0; i < 1000; ++i) {
+  findShortestStringRecursive(['flower', 'juniper', 'lily', 'dadelion']);
+
+
+const avgTime = (Date.now() - startTime) / 1000;
+console.log(avgTime);
+}
+
 module.exports = findShortestStringRecursive;
 
-// Please add your pseudocode to this file
-// And a written explanation of your solution
+// Define base case and return value.
+// Base case: if current element is shorter than shortest element thus far, 
+// replace it. Return value = shortest element.
+// For timer, set startTime to Date.now(). Then create a for loop
+// that runs the function 1000x, then sets Date.now() - startTime/1000
+// to avgTime, then clg avgTime. 
