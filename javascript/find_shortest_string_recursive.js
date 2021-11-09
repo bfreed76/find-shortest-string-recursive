@@ -1,9 +1,18 @@
 function findShortestStringRecursive(arr) {
- 
+  // iterative solution
   // return arr.reduce((shortest, current) => 
   //   current.length < shortest.length ? current : shortest
   // )
 
+  // recursive solution
+  if (arr.length < 2) {
+    return arr
+  }
+
+  const result = findShortestStringRecursive(arr.slice(1))
+  // removes for element for comparison to remaining element(s)
+
+  return arr[0].length <= result.length ? arr[0] : result
 
 }
 
